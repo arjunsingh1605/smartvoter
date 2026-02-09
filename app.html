@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SmartVoter - Blockchain Based Decentralized Voting System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- CryptoJS for SHA-256 hashing (works from local file) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+</head>
+<body>
+  <div class="app-wrapper">
+    <header class="app-header">
+      <h1>SmartVoter</h1>
+      <p class="subtitle">Blockchain Based Decentralized Voting System (Simulation)</p>
+    </header>
+
+    <main class="app-main">
+      <!-- Voting Panel -->
+      <section class="card voting-card">
+        <h2>Cast Your Vote</h2>
+        <div class="form-group">
+          <label for="voterId">Voter ID</label>
+          <input type="text" id="voterId" placeholder="Enter unique Voter ID" />
+        </div>
+
+        <div class="form-group">
+          <label for="candidateSelect">Select Candidate</label>
+          <select id="candidateSelect">
+            <option value="">-- Choose a candidate --</option>
+            <option value="Arjun">Arjun</option>
+            <option value="Arav">Arav</option>
+            <option value="Rahini">Rahini</option>
+            <option value="Hrishi">Hrishi</option>
+          </select>
+        </div>
+
+        <button id="voteButton" class="btn primary">Vote</button>
+        <p id="message" class="message"></p>
+      </section>
+
+      <!-- Results & Chain Status -->
+      <section class="side-panel">
+        <div class="card results-card">
+          <h2>Live Results</h2>
+          <div class="results-row">
+            <span class="candidate-name">Arjun</span>
+            <span id="votesArjun" class="vote-count">0</span>
+          </div>
+          <div class="results-row">
+            <span class="candidate-name">Arav</span>
+            <span id="votesArav" class="vote-count">0</span>
+          </div>
+          <div class="results-row">
+            <span class="candidate-name">Rahini</span>
+            <span id="votesRahini" class="vote-count">0</span>
+          </div>
+          <div class="results-row">
+            <span class="candidate-name">Hrishi</span>
+            <span id="votesHrishi" class="vote-count">0</span>
+          </div>
+        </div>
+
+        <div class="card status-card">
+          <h2>Blockchain Status</h2>
+          <p id="chainStatus" class="status-text valid">Blockchain Valid</p>
+          <button id="tamperButton" class="btn danger">Tamper Block 1</button>
+          <p class="helper-text">
+            Clicking "Tamper Block 1" modifies the first vote block.
+            The chain will fail validation, demonstrating tamper detection.
+          </p>
+        </div>
+      </section>
+
+      <!-- Blockchain Display -->
+      <section class="card chain-card">
+        <h2>Blockchain Blocks</h2>
+        <div id="chainContainer" class="chain-container">
+          <!-- Blocks will be rendered here dynamically -->
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>Arjun Singh &middot; Reg: 2427030082 &middot; Section-A</p>
+    </footer>
+  </div>
+
+  <!-- App Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
