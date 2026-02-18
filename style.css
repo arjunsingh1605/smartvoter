@@ -1,5 +1,4 @@
-/* Simple beginner-friendly styling for SmartVoter.
-   (A fancier theme is saved as style.modern.css) */
+
 
 body {
   font-family: Arial, sans-serif;
@@ -228,4 +227,5 @@ select:focus {
     align-items: start;
   }
 }
+
 
