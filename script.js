@@ -1,7 +1,5 @@
-// ========================
-// SmartVoter - Blockchain Voting Simulation
-// Pure Vanilla JavaScript + CryptoJS (SHA-256)
-// ========================
+
+// JavaScript + CryptoJS (SHA-256)
 
 /*
   BLOCK CLASS
@@ -358,4 +356,5 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial render
   refreshUI();
 });
+
 
